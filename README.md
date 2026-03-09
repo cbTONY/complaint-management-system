@@ -37,6 +37,6 @@ The Complaint Management System is a web-based application developed to help use
 4. Open the browser and go to
    http://localhost:3000
 
-## Author
-Student Name: YOUR NAME  
+## PROJECT CREATORS
+Anthony Pierre Kollie, Frank Houston, Mackmanaman Rogatus, Ashraf A. Hamza  
 Project Title: Complaint Management System  
