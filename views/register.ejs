@@ -1,0 +1,45 @@
+<%- include('partials/header') %>
+
+<div class="container auth-container">
+  <div class="card auth-card">
+    <h2>Create an Account</h2>
+    <p class="muted">Register to submit and track complaints</p>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <form method="POST">
+      <label>Email Address</label>
+      <input
+        name="email"
+        placeholder="Enter your email"
+        required
+      >
+
+      <label>Registration Number</label>
+      <input
+        name="regnum"
+        placeholder="Enter your registration number"
+        required
+      >
+
+      <label>Password</label>
+      <input
+        name="password"
+        type="password"
+        placeholder="Create a password"
+        required
+      >
+
+      <button type="submit" class="full-btn">Register</button>
+    </form>
+
+    <p class="auth-footer">
+      Already have an account?
+      <a href="/login">Login</a>
+    </p>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

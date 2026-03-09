@@ -1,0 +1,55 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1>Admin Dashboard</h1>
+  <p class="subtitle">Manage and resolve student complaints</p>
+
+  <div class="card">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student</th>
+          <th>Description</th>
+          <th>Category</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% for (let c of complaints) { %>
+          <tr>
+            <td><%= c.id %></td>
+            <td><%= c.student_email %></td>
+            <td class="desc"><%= c.description %></td>
+            <td><%= c.category %></td>
+
+            <td>
+              <span class="status <%= c.status.toLowerCase() %>">
+                <%= c.status %>
+              </span>
+            </td>
+
+            <td>
+              <form method="POST" action="/update/<%= c.id %>" class="inline-form">
+                <select name="status">
+                  <option value="Pending" <%= c.status === 'Pending' ? 'selected' : '' %>>
+                    Pending
+                  </option>
+                  <option value="Resolved" <%= c.status === 'Resolved' ? 'selected' : '' %>>
+                    Resolved
+                  </option>
+                </select>
+                <button type="submit" class="small-btn">Update</button>
+              </form>
+            </td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
+

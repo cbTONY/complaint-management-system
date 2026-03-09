@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <h1>Student Complaint Portal</h1>
+  <p class="subtitle">Submit and track your complaints</p>
+
+  <div class="card">
+    <h2>Submit a Complaint</h2>
+    <p class="muted">Fill the form below to report an issue</p>
+
+    <form method="POST">
+      <label>Description</label>
+      <textarea
+        name="description"
+        placeholder="Provide detailed information about your complaint"
+        required
+      ></textarea>
+
+      <label>Category</label>
+      <select name="category" required>
+        <option value="" disabled selected>Select a category</option>
+        <option>Facilities</option>
+        <option>Faculty</option>
+        <option>Other</option>
+      </select>
+
+      <button type="submit">Submit Complaint</button>
+    </form>
+  </div>
+</div>
+
+<%- include('partials/footer') %>
